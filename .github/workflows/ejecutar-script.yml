@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: Dar permisos de ejecución
-      run: chmod +x src/script.sh
+      run: chmod +x ./src/script.sh
     - name: Ejecutar script
-      run: src/script.sh
+      run: ./src/script.sh
   
