@@ -1,0 +1,20 @@
+name: Copia de seguridad 
+on:
+  push:
+    branches:
+      - main
+jobs:
+  ejecutar-copia:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Crear carpeta
+        run: mkdir -p backup
+      - name: Crear copia de seguridad
+        run: tar -czf backup/backup.tar.gz datos
+      - name: Guardar el backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-de-datos
+          path: backup/backup.tar.gz
