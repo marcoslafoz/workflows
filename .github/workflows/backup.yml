@@ -1,8 +1,7 @@
 name: Copia de seguridad 
 on:
   push:
-    branches:
-      - main
+    branches: [ main]
 jobs:
   ejecutar-copia:
     runs-on: ubuntu-latest
